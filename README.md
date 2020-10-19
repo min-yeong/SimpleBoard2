@@ -1,6 +1,6 @@
 # SimpleBoard2
 ## 파일 구성
-<img width="860" alt="캡처2" src="https://user-images.githubusercontent.com/58197075/96242800-d96eb680-0fde-11eb-9974-5af317167be4.PNG">
+<img width="882" alt="캡처2" src="https://user-images.githubusercontent.com/58197075/96426222-e9cd9e00-1237-11eb-8391-b404b6c3c491.PNG">
 
 ## 세션과 쿠키
 ### 세션
