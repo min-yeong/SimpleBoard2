@@ -2,6 +2,9 @@
 ## 파일 구성
 <img width="882" alt="캡처2" src="https://user-images.githubusercontent.com/58197075/96426222-e9cd9e00-1237-11eb-8391-b404b6c3c491.PNG">
 
+### 게시물 페이징
+참고 : https://lkg3796.tistory.com/62
+
 ## 세션과 쿠키
 ### 세션
 
