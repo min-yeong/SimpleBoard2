@@ -32,6 +32,8 @@
 ## TELNET,FTP / SSH,SFTP
 
 ### TELNET
+- TCP/IP 기반의 네트워크 프로토콜 
 ### SSH
 ### FTP
+- File Transfer Protocol 파일 전송 프로토콜 
 ### SFTP
