@@ -102,15 +102,22 @@ FTP의 암호화 버전
 
 ### Xshell
 서버 연결 방법
-- 새 새션 등록
-- 사용자 인증에서 인증 방법을 Public Key로 변경 후 사용자 키에 부여받은 Public key /pem 파일 넣기 
-- 이름, 호스트(부여받은IP정보), 사용자이름
+
+-새 새션 등록
+
+-사용자 인증에서 인증 방법을 Public Key로 변경 후 사용자 키에 부여받은 Public key /pem 파일 넣기 
+
+-이름, 호스트(부여받은IP정보), 사용자이름
 ->연결 
 
 개발 환경 구축
+
 -sudo yum update // 업데이트
+
 -sudo yum install httpd -y //아파치 설치
+
 -sudo yum install php -y //php 설치
+
 -sudo yum install mysql // mysql설치 
 
 -service httpd status //아파치 상태 확인
