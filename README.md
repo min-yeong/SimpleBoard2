@@ -120,9 +120,10 @@ FTP의 암호화 버전
 
 -sudo yum install mysql // mysql설치 
 
--service httpd status //아파치 상태 확인
+-service httpd status/start/stop/restart //아파치상태확인/시작/종료/재시작
+멤초 
 
--sudo
+-sudo -s //root계정으로 돌아감
 
 ### WinSCP 
 - advanced 에서 SSH -> Authentication
