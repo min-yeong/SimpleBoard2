@@ -97,3 +97,31 @@ File Transfer Protocol 서버와 클라이언트 사이의 파일 전송 프로�
 ### SFTP
 SSH의 파일 전송 프로토콜, 22번 포트
 FTP의 암호화 버전  
+
+## 서버 연동
+### Xshell 
+- 새 새션 등록
+- 사용자 인증에서 인증 방법을 Public Key로 변경 후 사용자 키에 부여받은 Public key /pem 파일 넣기 
+ - 이름, 호스트(부여받은IP정보), 사용자이름
+-> 연결 
+
+### WinSCP 
+- advanced 에서 SSH -> Authentication
+에서 Private key file (압축 푼거) .pem 파일 가져오기 
+- hostname : 부여받은IP정보 , User name
+-> 로그인 
+
+Xshell -> 리눅스 버전
+WinSCP -> 파일 버전 
+
+### Visual Studio Code에서 FTP 이용 원격 개발
+1. ftp-simple 설치
+2. >ftp-simple:Config 입력 후 선택
+3. "name", "host", "privateKey"(key파일의 위치) 설정하기 
+4. >ftp-simple:Remote directory open to workspace 입력 후 선택
+5. 방금 만든 서버 클릭
+6. 워크스페이스로 쓸 디렉토리 선택
+7. 연결 해제 >ftp-simple:Close all FTP connections 를 실행
+
+
+참고 : https://www.manualfactory.net/10964
