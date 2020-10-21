@@ -167,5 +167,10 @@ CREATE TABLE testdb (UserNumber int primary key auto_increment, Title varchar(10
 CREATE TABLE usersdb(UserNumber int primary key auto_increment, Id varchar(30) not null, Password varchar(30) not null,
   UserName varchar(30) not null, Company varchar(30) not null);
 
+## 서버 연동 중, 발생 오류
 
+- PHP Fatal error:  Call to a member function query() on a non-object
+=> include "파일경로"; : 파일 경로 수정, 원격 서버에서의 파일 경로로
 
+- PHP Fatal error:  Call to a member function query() on a non-object
+=> 
