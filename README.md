@@ -133,6 +133,12 @@ https://cherrypick.co.kr/how-to-install-mysql5-7-in-centos7/
 2. data.timezone =Asia/Seoul 
 => /var/www/html 안에 index.php 파일 생성 후, 간단한 코드로 서버 연동확인 (ip주소/index.php)
 
+-httpd.conf 환경설정
+1. <IfModule dir_module>
+    DirectoryIndex index.html 
+  </IfModule>
+  => 안에 index.php 추가
+
 ### WinSCP 
 - advanced 에서 SSH -> Authentication
 에서 Private key file (압축 푼거) .pem 파일 가져오기 
@@ -172,5 +178,20 @@ CREATE TABLE usersdb(UserNumber int primary key auto_increment, Id varchar(30) n
 - PHP Fatal error:  Call to a member function query() on a non-object
 => include "파일경로"; : 파일 경로 수정, 원격 서버에서의 파일 경로로
 
-- PHP Fatal error:  Call to a member function query() on a non-object
-=> 
+- PHP Fatal error:  Class 'mysqli' not found
+=> php, mysqli의 버전 차이
+
+$yum list installed | grep php
+php.x86_64                         5.4.16-48.el7              @base             
+php-cli.x86_64                     5.4.16-48.el7              @base             
+php-common.x86_64                  5.4.16-48.el7              @base             
+php-mysql.x86_64                   5.4.16-48.el7              @base             
+php-pdo.x86_64                     5.4.16-48.el7              @base  
+=> 모두 삭제 후, 재 설치
+
+### 수정해야 할 부분
+#yum install php
+#php -i | grep 'Client API'
+#php -r 'new mysqli();'
+#systemctl restart httpd -> 아파치 재시작
+#chcon -R -t httpd_sys_rw_content_t /var/www/html/simpleboard -> 
