@@ -118,12 +118,20 @@ FTP의 암호화 버전
 
 -sudo yum install php -y //php 설치
 
--sudo yum install mysql // mysql설치 
+-sudo yum install php-mysql //php와 mysql 연동 설치 
 
 -service httpd status/start/stop/restart //아파치상태확인/시작/종료/재시작
 멤초 
 
 -sudo -s //root계정으로 돌아감
+
+-CentOS 7에서 MySQL 5.7 설치 
+https://cherrypick.co.kr/how-to-install-mysql5-7-in-centos7/
+
+-php.ini 환경설정 ()
+1. short_open_tag = On
+2. data.timezone =Asia/Seoul 
+=> /var/www/html 안에 index.php 파일 생성 후, 간단한 코드로 서버 연동확인 (ip주소/index.php)
 
 ### WinSCP 
 - advanced 에서 SSH -> Authentication
