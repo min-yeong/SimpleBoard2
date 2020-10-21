@@ -128,7 +128,7 @@ FTP의 암호화 버전
 -CentOS 7에서 MySQL 5.7 설치 
 https://cherrypick.co.kr/how-to-install-mysql5-7-in-centos7/
 
--php.ini 환경설정 ()
+-php.ini 환경설정
 1. short_open_tag = On
 2. data.timezone =Asia/Seoul 
 => /var/www/html 안에 index.php 파일 생성 후, 간단한 코드로 서버 연동확인 (ip주소/index.php)
@@ -150,5 +150,22 @@ https://cherrypick.co.kr/how-to-install-mysql5-7-in-centos7/
 7. 연결 해제 >ftp-simple:Close all FTP connections 를 실행
 
 참고 : https://www.manualfactory.net/10964
+
+## MySQL
+
+-데이터베이스 생성
+
+CREATE DATABASE testdb default character SET UTF8;
+
+-testdb 테이블 생성 
+
+CREATE TABLE testdb (UserNumber int primary key auto_increment, Title varchar(100) not null, Content varchar(100) not null, 
+  Company varchar(30) not null, UserName varchar(30) not null, Id varchar(30) not null, Date datetime, Hit int not null default '0');
+    
+-users 테이블 생성
+
+CREATE TABLE usersdb(UserNumber int primary key auto_increment, Id varchar(30) not null, Password varchar(30) not null,
+  UserName varchar(30) not null, Company varchar(30) not null);
+
 
 
