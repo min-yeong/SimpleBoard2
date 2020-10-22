@@ -181,7 +181,7 @@ $tail [option] filename : 파일의 마지막부터 지정한 행만큼 출력, 
 
 -PHP Fatal error:  Call to a member function query() on a non-object
 
--> include "파일경로"; : 파일 경로 수정, 원격 서버에서의 파일 경로로
+-> php 소스 오류, include "파일경로"; : 파일 경로 수정, 원격 서버에서의 파일 경로로
 
 -PHP Fatal error:  Class 'mysqli' not found
 
