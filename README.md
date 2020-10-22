@@ -173,25 +173,42 @@ CREATE TABLE testdb (UserNumber int primary key auto_increment, Title varchar(10
 CREATE TABLE usersdb(UserNumber int primary key auto_increment, Id varchar(30) not null, Password varchar(30) not null,
   UserName varchar(30) not null, Company varchar(30) not null);
 
-## 서버 연동 중, 발생 오류
+## 서버 연동 중, 발생 오류 ($(centos계정에서명령어), #(root계정에서명령어), -(발생한오류))
 
-- PHP Fatal error:  Call to a member function query() on a non-object
-=> include "파일경로"; : 파일 경로 수정, 원격 서버에서의 파일 경로로
+-$ sudo tail -f /var/log/httpd/error_log
+-> 실시간 오류 확인 명령어
+```
+$head [option] filename : 파일의 앞에서부터 지정한 행만큼 출력, head -3 *.c -> 현재 디렉터리의 '.c'로 끝나는 모든 파일의 처음 3줄씩 보여줌 
+$tail [option] filename : 파일의 마지막부터 지정한 행만큼 출력, -f 는 새로운 행이 추가될 대 실시간으로 출력
+```
 
-- PHP Fatal error:  Class 'mysqli' not found
-=> php, mysqli의 버전 차이
+-PHP Fatal error:  Call to a member function query() on a non-object
+-> include "파일경로"; : 파일 경로 수정, 원격 서버에서의 파일 경로로
+
+-PHP Fatal error:  Class 'mysqli' not found
+-> php, mysqli의 버전 차이
 
 $yum list installed | grep php
+
 php.x86_64                         5.4.16-48.el7              @base             
 php-cli.x86_64                     5.4.16-48.el7              @base             
 php-common.x86_64                  5.4.16-48.el7              @base             
 php-mysql.x86_64                   5.4.16-48.el7              @base             
 php-pdo.x86_64                     5.4.16-48.el7              @base  
-=> 모두 삭제 후, 재 설치
+-> 모두 개별 삭제 
 
-### 수정해야 할 부분
 #yum install php
+-> php 재설치
+
 #php -i | grep 'Client API'
+-> mysqlnd 각 버전 확인 
+
 #php -r 'new mysqli();'
-#systemctl restart httpd -> 아파치 재시작
-#chcon -R -t httpd_sys_rw_content_t /var/www/html/simpleboard -> 
+-> mysqli 함수가 작동하는 지 확인, 오류 없으면 설치 완료
+
+$sudo systemctl restart httpd
+-> 아파치 재시작
+
+#chcon -R -t httpd_sys_rw_content_t /var/www/html/simpleboard 
+-> selinux 보안문제, httpd_sys_rw_content_t라는 타입을 사용해 저장 디렉터리의 HTTP 웹서버 읽기 쓰기 가능하게 하기  
+
