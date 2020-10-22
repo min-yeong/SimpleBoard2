@@ -120,28 +120,23 @@ FTP의 암호화 버전
 
 -sudo yum install php-mysql //php와 mysql 연동 설치 
 
--service httpd status/start/stop/restart //아파치상태확인/시작/종료/재시작
-멤초 
-
--sudo -s //root계정으로 돌아감
+-service httpd status/start/stop/restart //아파치상태확인/시작/종료/재시작 
 
 -CentOS 7에서 MySQL 5.7 설치 
 https://cherrypick.co.kr/how-to-install-mysql5-7-in-centos7/
 
--php.ini 환경설정
-1. short_open_tag = On
-2. data.timezone =Asia/Seoul 
-=> /var/www/html 안에 index.php 파일 생성 후, 간단한 코드로 서버 연동확인 (ip주소/index.php)
+-vi로 파일 수정하는 명령어
+1. i (수정), esc (편집완료)
+2. :wq (수정내용저장후나오기), :q (수정안하고나오기), :q! (수정내용저장안하고나오기)
 
--httpd.conf 환경설정
-1. <IfModule dir_module>
-    DirectoryIndex index.html 
-  </IfModule>
-  => 안에 index.php 추가
+-php.ini 환경설정
+1. short_open_tag = On (html에서 php 간단한 표기로 사용하기 <? ?>)
+2. data.timezone =Asia/Seoul 
+-> /var/www/html 안에 index.php 파일 생성 후, 간단한 코드 (phpinfo())로 서버 연동확인 (ip주소/index.php)
 
 ### WinSCP 
-- advanced 에서 SSH -> Authentication
-에서 Private key file (압축 푼거) .pem 파일 가져오기 
+
+- advanced 에서 SSH -> Authentication 에서 Private key file (압축 푼거) .pem(.ppk) 파일 가져오기 
 - hostname : 부여받은IP정보 , User name
 ->로그인 
 
@@ -223,3 +218,5 @@ $sudo systemctl restart httpd
 
 -> selinux 보안문제, httpd_sys_rw_content_t라는 타입을 사용해 저장 디렉터리의 HTTP 웹서버 읽기 쓰기 가능하게 하기  
 
+
+-
