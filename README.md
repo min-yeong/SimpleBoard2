@@ -136,8 +136,8 @@ https://cherrypick.co.kr/how-to-install-mysql5-7-in-centos7/
 
 ### WinSCP 
 
-- advanced 에서 SSH -> Authentication 에서 Private key file (압축 푼거) .pem(.ppk) 파일 가져오기 
-- hostname : 부여받은IP정보 , User name
+-advanced 에서 SSH -> Authentication 에서 Private key file (압축 푼거) .pem(.ppk) 파일 가져오기 
+-hostname : 부여받은IP정보 , User name
 ->로그인 
 
 ### Visual Studio Code에서 FTP 이용 원격 개발
@@ -217,6 +217,3 @@ $sudo systemctl restart httpd
 #chcon -R -t httpd_sys_rw_content_t /var/www/html/simpleboard 
 
 -> selinux 보안문제, httpd_sys_rw_content_t라는 타입을 사용해 저장 디렉터리의 HTTP 웹서버 읽기 쓰기 가능하게 하기  
-
-
--
