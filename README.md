@@ -215,7 +215,16 @@ $sudo systemctl restart httpd
 
 #chcon -R -t httpd_sys_rw_content_t /var/www/html/simpleboard 
 
--> selinux 보안문제, httpd_sys_rw_content_t라는 타입을 사용해 저장 디렉터리의 HTTP 웹서버 읽기 쓰기 가능하게 하기  
+-> SELinux 보안문제, httpd_sys_rw_content_t라는 타입을 사용해 저장 디렉터리의 HTTP 웹서버 읽기 쓰기 가능하게 하기  
+
+```
+SELinux (Security-Enhanced Linux) : 특정 부분만 권한이 허가되어 있고 기본적으로 모두 막혀있음
+
+#sestatus
+-> SELinux의 보안 레벨을 알 수 있는 명령어
+
+chcon 명렁어로 특정 권한 변경
+```
 
 #mysql INSERT 쿼리문, 수정 
 
